@@ -7,7 +7,6 @@
 
 #include "camera.h"
 #include "model.h"
-#include "Move.h"
 
 #include <iostream>
 #include <ctime>
@@ -69,10 +68,6 @@ int main(int argc, char* argv[])
 	}
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	// glfwSetCursorPosCallback(window, mouse_callback);
-	// glfwSetScrollCallback(window, scroll_callback);
-
-	// glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
@@ -270,7 +265,7 @@ int main(int argc, char* argv[])
         lightingShader.setFloat("material.shininess", 32.0f);
 
         lightingShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-        lightingShader.setVec3("dirLight.ambient", 0.3f, 0.3f, 0.3f);
+        lightingShader.setVec3("dirLight.ambient", 0.4f, 0.4f, 0.4f);
         lightingShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
         lightingShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
         lightingShader.setVec3("pointLights[0].position", pointLightPositions[0]);
